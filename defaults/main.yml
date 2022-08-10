@@ -1,0 +1,16 @@
+---
+
+docker_compose_action: install
+# docker_compose_action: uninstall
+
+
+##
+# Docker Compose
+##
+# Version of the docker-compose package to be installed.
+# By default, the latest available version will be installed.
+docker_compose_version: ""
+
+docker_compose_github_repo: "docker/compose"
+
+docker_compose_executable: "/usr/local/bin/docker-compose"
