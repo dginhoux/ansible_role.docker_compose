@@ -1,4 +1,4 @@
-ginhouxnet.sysctl
+ginhouxnet.docker_compose
 =========
 
 This ansible role install (and uninstall) docker-compose binary from github repository
