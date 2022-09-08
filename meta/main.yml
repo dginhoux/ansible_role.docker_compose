@@ -1,7 +1,7 @@
 ---
 
 galaxy_info:
-  role_name: ginhouxnet.docker_compose
+  role_name: docker_compose
   description: install docker compose
   author: dginhoux
   company: ginhouxnet
