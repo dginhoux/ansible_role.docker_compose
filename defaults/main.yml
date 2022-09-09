@@ -1,8 +1,6 @@
 ---
-
 docker_compose_action: install
 # docker_compose_action: uninstall
-
 
 ##
 # Docker Compose

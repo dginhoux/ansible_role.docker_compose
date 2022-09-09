@@ -1,5 +1,4 @@
 ---
-
 galaxy_info:
   role_name: docker_compose
   description: install docker compose
@@ -25,6 +24,5 @@ galaxy_info:
   galaxy_tags:
     - docker
     - swarm
-
 
 dependencies: []

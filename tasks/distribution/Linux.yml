@@ -1,30 +1,27 @@
 ---
-
-
 - block:
     - block:
-      - name: get information on the latest docker-compose release from github
-        uri:
-          url: "https://api.github.com/repos/{{ docker_compose_github_repo }}/releases/latest"
-          method: GET
-        register: _docker_compose_github_release
-        check_mode: no
-        until: _docker_compose_github_release.status == 200
-        retries: 5
-        delay: 15
+        - name: get information on the latest docker-compose release from github
+          uri:
+            url: "https://api.github.com/repos/{{ docker_compose_github_repo }}/releases/latest"
+            method: GET
+          register: _docker_compose_github_release
+          check_mode: false
+          until: _docker_compose_github_release.status == 200
+          retries: 5
+          delay: 15
 
-      - name: extract the name of the latest docker-compose release tag
-        set_fact:
-          docker_compose_version: "{{ _docker_compose_github_release['json'] | json_query('tag_name') }}"
+        - name: extract the name of the latest docker-compose release tag
+          set_fact:
+            docker_compose_version: "{{ _docker_compose_github_release['json'] | json_query('tag_name') }}"
       when: docker_compose_version | length == 0
 
     - name: download docker-compose
       get_url:
-        url: "https://github.com/{{ docker_compose_github_repo }}/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_system }}-{{ ansible_userspace_architecture }}"  # noqa 204
+        url: "https://github.com/{{ docker_compose_github_repo }}/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_system }}-{{ ansible_userspace_architecture }}" # noqa 204
         dest: "{{ docker_compose_executable }}"
-        mode: '0755'
+        mode: "0755"
   when: docker_compose_action == "install"
-
 
 - block:
     - name: remove docker-compose
