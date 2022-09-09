@@ -1,4 +1,4 @@
-ginhouxnet.docker_compose
+Ansible Role : dginhoux.docker_compose
 =========
 
 This ansible role install, configure and uninstall docker-compose binary from github repository
