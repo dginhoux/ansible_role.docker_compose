@@ -1,7 +1,7 @@
 ginhouxnet.docker_compose
 =========
 
-This ansible role install (and uninstall) docker-compose binary from github repository
+This ansible role install, configure and uninstall docker-compose binary from github repository
 
 
 Requirements
@@ -21,6 +21,7 @@ Dependencies
 ------------
 
 none
+
 
 Example Playbook
 ----------------
