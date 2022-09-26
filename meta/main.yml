@@ -1,8 +1,7 @@
 ---
 galaxy_info:
   role_name: docker_compose
-  description: |
-    This ansible role install, configure and uninstall docker-compose binary from github repository
+  description: dginhoux.docker_compose
   author: Dany GINHOUX
   company: dginhoux
   license: MIT
