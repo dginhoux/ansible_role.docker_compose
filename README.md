@@ -78,7 +78,7 @@ docker_compose_version: "
 Those variables files are located in `vars/*.yml` are used to handle OS differences.<br />
 One of theses is loaded dynamically during role runtime using the `include_vars` module and set OS specifics variable's.
 
-NOT USED BY THIS ROLE
+`NOT USED BY THIS ROLE`
 
 
 ## AUTHOR
