@@ -4,7 +4,7 @@
 
 ## DESCRIPTION
 
-This ansible role install, configure and uninstall docker-compose<br />
+This ansible role install, configure and uninstall docker-compose.<br />
 It grab the binary from github repository.
 
 
