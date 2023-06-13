@@ -1,6 +1,8 @@
 ---
 - name: Install docker-compose
- # when: docker_compose_version | length == 0
+  tags:
+    - install
+  # when: docker_compose_version | length == 0
   when: docker_compose_action == "install"
   block:
     - name: Get information on the latest docker-compose release from github
@@ -24,9 +26,11 @@
         mode: "0755"
 
 
-- name: Remove docker-compose
+- name: Uninstall docker-compose
+  tags:
+    - uninstall
+  when: docker_compose_action == "uninstall"
   ansible.builtin.file:
     path: "{{ docker_compose_executable }}"
     state: absent
   # ignore_errors: true
-  when: docker_compose_action == "uninstall"
