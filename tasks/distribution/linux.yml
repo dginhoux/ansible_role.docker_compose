@@ -20,6 +20,7 @@
         docker_compose_version: "{{ _docker_compose_github_release['json'] | json_query('tag_name') }}"
 
     - name: Download docker-compose
+      become: true
       ansible.builtin.get_url:
         url: "https://github.com/{{ docker_compose_github_repo }}/releases/download/{{ docker_compose_version }}/docker-compose-{{ ansible_system }}-{{ ansible_userspace_architecture }}" # noqa 204
         dest: "{{ docker_compose_executable }}"
@@ -27,6 +28,7 @@
 
 
 - name: Uninstall docker-compose
+  become: true
   tags:
     - uninstall
   when: docker_compose_action == "uninstall"
