@@ -50,7 +50,7 @@ git clone https://github.com/dginhoux/ansible_role.docker_compose dginhoux.docke
 
 ```yaml
 - hosts: all
-  roles:
+  tasks:
     - name: start role dginhoux.docker_compose
       ansible.builtin.include_role:
         name: dginhoux.docker_compose
@@ -61,7 +61,9 @@ git clone https://github.com/dginhoux/ansible_role.docker_compose dginhoux.docke
 
 #### DEFAULT VARIABLES
 
-Defaults variables defined in `defaults/main.yml` : 
+Defaults variables defined in `defaults/main.yml`
+
+#### EXAMPLES VARIABLES
 
 ```yaml
 docker_compose_action: install
